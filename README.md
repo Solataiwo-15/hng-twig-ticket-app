@@ -10,9 +10,7 @@ The application's structure is built with static HTML files, simulating the rend
 
 **The deployed Twig/JS application can be viewed here:**
 
-**[https://your-TWIG-APP-url.vercel.app](https://your-TWIG-APP-url.vercel.app)**
-
-> **Note:** You will get this URL after deploying this project to Vercel.
+**[https://hng-twig-ticket-app.vercel.app/](https://hng-twig-ticket-app.vercel.app/)**
 
 ---
 
@@ -24,7 +22,11 @@ The application's structure is built with static HTML files, simulating the rend
 - **Simulated User Sessions:** User authentication is simulated using `localStorage`.
 - **Protected Routes:** A "gatekeeper" script (`auth-check.js`) runs on protected pages, checking for a valid session and redirecting unauthorized users before the page content loads.
 - **Dashboard:** A dashboard that dynamically builds its own navbar and displays statistics.
-- **Full CRUD Functionality:** A complete Ticket Management system handled by `tickets.js`, which dynamically renders, creates, updates, and deletes tickets by manipulating the DOM.
+- **Full CRUD Functionality:** A complete Ticket Management system handled by `tickets.js`, which allows users to:
+  - **C**reate new tickets via a modal form.
+  - **R**ead all existing tickets in a responsive grid.
+  - **U**pdate ticket details (title, description, status) via an edit modal.
+  - **D**elete tickets with a confirmation step.
 - **Responsive Design:** The entire application is fully responsive using the shared global CSS and page-specific stylesheets.
 
 ---
