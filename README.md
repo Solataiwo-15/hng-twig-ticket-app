@@ -1,8 +1,16 @@
-# HNG Stage 2: Multi-Framework Ticket Web App (Twig/Vanilla JS Version)
+### 🗂️ About This Project Series
 
-This repository contains the **Twig/Vanilla JS implementation** for the HNG Stage 2 Frontend task. This version demonstrates the ability to build the complete application using a traditional, non-framework approach.
+This application was built as part of the HNG Internship Stage 2 task, which required implementing the same application across three different frontend technologies.
 
-The application's structure is built with static HTML files, simulating the rendered output of a server-side templating engine like Twig. All dynamic functionality, including authentication, protected routes, and full ticket CRUD operations, is handled entirely with **vanilla JavaScript**.
+**This repository contains the Twig version.**
+
+You can view the other implementations here:
+
+- **Live Demo (React Version):** `https://hng-react-ticket-app-gilt.vercel.app/`
+- **GitHub Repo (React Version):** `https://github.com/Solataiwo-15/hng-react-ticket-app`
+
+- **Live Demo (Vue.js Version):** `https://hng-vue-ticket-app-phi.vercel.app/`
+- **GitHub Repo (Vue.js Version):** `https://github.com/Solataiwo-15/hng-vue-ticket-app`
 
 ---
 

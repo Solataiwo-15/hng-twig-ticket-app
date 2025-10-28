@@ -248,16 +248,10 @@
     color: var(--text-color);
 }
 
-
-/* ============================================= */
-/* --- TICKET PAGE RESPONSIVENESS --- */
-/* ============================================= */
-
 @media (max-width: 768px) {
   .ticket-page-header {
-    /* Stack the title and button on mobile */
     flex-direction: column;
-    align-items: flex-start; /* Align to the left */
+    align-items: flex-start;
     gap: 16px;
   }
 
@@ -266,15 +260,11 @@
   }
 
   .ticket-list {
-    /* Ensure a single column on small screens */
     grid-template-columns: 1fr;
   }
 
   .modal-content {
-    /* Reduce padding on smaller screens */
     padding: 30px 20px;
-
-    /* Optional: Add a little margin so it doesn't touch the very edges */
     margin: 0 20px;
   }
 }

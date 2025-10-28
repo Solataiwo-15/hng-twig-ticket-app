@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
   const mainHeader = document.querySelector('.main-header');
   const mainContent = document.querySelector('main');
 
-  // --- Determine which navbar to build ---
-  // We check if the header has an id of 'dashboard-header'
   if (mainHeader && mainHeader.id === 'dashboard-header') {
-    // --- BUILD DASHBOARD NAVBAR ---
     const session = JSON.parse(localStorage.getItem('ticketapp_session'));
     const userName = session?.user?.name || 'User';
     mainHeader.innerHTML = `
@@ -26,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'index.html';
     });
   } else if (mainHeader) {
-    // --- BUILD PUBLIC NAVBAR ---
     mainHeader.innerHTML = `
       <div class="container">
         <nav class="main-nav">
@@ -41,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
   
-  // --- Universal Mobile Menu Logic ---
   const hamburger = document.querySelector('.hamburger-menu');
   const navLinks = document.querySelector('.nav-links');
   if (hamburger && navLinks) {
@@ -54,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Universal Dynamic Year in Footer ---
   const yearSpan = document.getElementById('current-year');
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();

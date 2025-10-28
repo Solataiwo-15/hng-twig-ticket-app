@@ -1,25 +1,18 @@
-/* ============================================= */
-/* --- 0. FONT IMPORT & GLOBAL RESETS --- */
-/* ============================================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-    /* Define our NEW color palette */
-    --primary-color: #6366F1; /* A modern, vibrant indigo */
+    --primary-color: #6366F1;
     --primary-color-dark: #4F46E5;
     --background-color: #F8F9FA;
-    --surface-color: #FFFFFF; /* Replaces card-bg-color */
+    --surface-color: #FFFFFF;
     --text-color: #1F2937;
     --text-color-muted: #6B7280;
     --shadow-color: rgba(0, 0, 0, 0.05);
-
-    /* Status colors */
-    --status-open: #10B981;       /* Green */
-    --status-in-progress: #F59E0B; /* Amber */
-    --status-closed: #6B7280;      /* Gray */
+    --status-open: #10B981;      
+    --status-in-progress: #F59E0B;
+    --status-closed: #6B7280;  
 }
 
-/* Basic reset and font application */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
@@ -32,27 +25,16 @@ body {
     min-height: 100vh;
 }
 
-/* ============================================= */
-/* --- 1. SHARED LAYOUT & CONTAINER --- */
-/* ============================================= */
-
-/* The main container rule required by the task */
 .container {
     max-width: 1440px;
-    margin: 0 auto; /* Horizontally centers the content */
-    padding: 0 24px; /* Adds space on the sides for smaller screens */
+    margin: 0 auto;
+    padding: 0 24px;
     width: 100%;
     box-sizing: border-box;
 }
 
-
-/* ============================================= */
-/* --- 2. REUSABLE COMPONENTS --- */
-/* ============================================= */
-
-/* Card style for tickets, dashboard stats, etc. */
 .card {
-    background-color: var(--surface-color); /* UPDATE THIS LINE */
+    background-color: var(--surface-color); 
     border-radius: 12px;
     box-shadow: 0 4px 20px var(--shadow-color);
     padding: 24px;
@@ -64,7 +46,6 @@ body {
     box-shadow: 0 8px 30px var(--shadow-color);
 }
 
-/* Button styles */
 .btn {
     display: inline-block;
     padding: 12px 24px;
@@ -90,8 +71,6 @@ body {
     background-color: #357ABD;
 }
 
-/* ... after .btn-primary:hover ... */
-
 .btn-light {
     background-color: #FFFFFF;
     color: var(--primary-color-dark);
@@ -114,10 +93,9 @@ body {
 }
 
 .btn-text:hover {
-    background-color: rgba(99, 102, 241, 0.1); /* A very light indigo background on hover */
+    background-color: rgba(99, 102, 241, 0.1);
 }
 
-/* Form input styles */
 .form-input {
     width: 100%;
     padding: 12px;
@@ -129,14 +107,10 @@ body {
     margin-bottom: 2px;
 }
 
-
-/* ============================================= */
-/* --- 3. TICKET STATUS TAGS --- */
-/* ============================================= */
 .status-tag {
     display: inline-block;
     padding: 4px 12px;
-    border-radius: 9999px; /* Pill shape */
+    border-radius: 9999px;
     font-size: 12px;
     font-weight: 600;
     text-transform: capitalize;
@@ -149,7 +123,7 @@ body {
 
 .status-in-progress {
     background-color: var(--status-in-progress);
-    color: #333; /* Dark text for better contrast on yellow */
+    color: #333;
 }
 
 .status-closed {
@@ -157,10 +131,6 @@ body {
     color: white;
 }
 
-
-/* ============================================= */
-/* --- 4. FOOTER --- */
-/* ============================================= */
 .footer {
     width: 100%;
     padding: 5px 0;
@@ -207,28 +177,20 @@ body {
     margin-right: 16px;
 }
 
-/* --- Hamburger Menu Button (hidden on desktop) --- */
 .hamburger-menu {
-    display: none; /* Hide by default */
-    background: none;
+    display: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
     color: var(--text-color);
 }
 
-/* ADD THIS NEW RULE */
 main.blur-background {
     filter: blur(4px);
-    /* Make the background unclickable */
     pointer-events: none;
     user-select: none;
     transition: filter 0.3s ease-in-out;
 }
-
-/* ============================================= */
-/* --- FINAL MOBILE SIDEBAR STYLES --- */
-/* ============================================= */
 
 @media (max-width: 768px) {
     .nav-links {
@@ -239,17 +201,13 @@ main.blur-background {
         max-width: 320px;
         height: 100%;
         background-color: var(--surface-color);
-        box-shadow: -4px 0px 20px rgba(0,0,0,0.1);
-        
+        box-shadow: -4px 0px 20px rgba(0,0,0,0.1); 
         display: flex;
         flex-direction: column;
-
-        /* --- THE ALIGNMENT & SPACING FIX --- */
-        align-items: flex-start; /* Strictly align everything to the left */
+        align-items: flex-start;
         justify-content: flex-start;
-        padding: 65px 35px; /* Consistent padding */
-        gap: 25px; /* Tighter, more consistent spacing */
-        
+        padding: 65px 35px;
+        gap: 25px;
         transition: right 0.35s ease-in-out;
         z-index: 1002;
         box-sizing: border-box;
@@ -259,35 +217,23 @@ main.blur-background {
         right: 0;
     }
 
-    /* This rule targets EVERY item in the menu for consistency */
-    /* This rule targets EVERY item in the menu for consistency */
-/* This rule targets EVERY item in the menu for a complete and consistent reset */
 .nav-links li > * {
-    /* === FONT & COLOR RESET === */
-    font-family: 'Poppins', sans-serif !important; /* THE CRITICAL FIX: Force our desired font */
+    font-family: 'Poppins', sans-serif !important;
     font-size: 18px !important;
     font-weight: 500 !important;
     color: var(--text-color) !important;
-
-    /* === VISUAL STYLE RESET === */
     background: none !important;
     border: none !important;
     padding: 0 !important;
-    
-    /* === ALIGNMENT & BEHAVIOR RESET === */
     text-align: left !important;
     cursor: pointer !important;
-    
-    /* === HOVER EFFECT === */
     transition: color 0.2s;
 }
 
-/* Add a hover effect for the items */
 .nav-links li > *:hover {
     color: var(--primary-color) !important;
 }
 
-/* Add a hover effect for the items */
 .nav-links li > *:hover {
     color: var(--primary-color) !important;
 }
@@ -295,23 +241,21 @@ main.blur-background {
 .hamburger-menu {
     display: block;
     z-index: 1003;
-    position: fixed; /* Fix hamburger to the top right */
+    position: fixed;
     top: 16px;
     right: 24px;
 }
     
-/* We also need to fix the main header to not interfere */
 .main-nav {
-    justify-content: flex-start; /* Align logo to the left */
+    justify-content: flex-start;
 }
 
 .nav-user {
     order: -1;
 }
     
-/* ADD THIS NEW RULE */
 .nav-links .nav-user {
-    color: var(--text-color-muted) !important; /* Use the muted text color */
-    font-weight: 400 !important; /* Make it slightly less bold */
+    color: var(--text-color-muted) !important;
+    font-weight: 400 !important;
 }
 }

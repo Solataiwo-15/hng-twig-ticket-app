@@ -1,5 +1,3 @@
-// js/tickets.js
-
 let tickets = [
   {
     id: 'TICKET-001',
@@ -31,10 +29,7 @@ let tickets = [
   },
 ];
 
-// --- (The 'tickets' array from above should be here) ---
-
 document.addEventListener('DOMContentLoaded', () => {
-  // --- Get all necessary DOM elements ---
   const ticketListContainer = document.getElementById('ticket-list-container');
   const createBtn = document.getElementById('create-ticket-btn');
   const createModal = document.getElementById('create-modal');
@@ -42,9 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const editModal = document.getElementById('edit-modal');
   const editForm = document.getElementById('edit-ticket-form');
 
-  // --- Main Render Function (READ) ---
   const renderTickets = () => {
-    ticketListContainer.innerHTML = ''; // Clear the list
+    ticketListContainer.innerHTML = '';
     tickets.forEach(ticket => {
       const ticketCard = document.createElement('div');
       ticketCard.className = 'card ticket-card';
@@ -65,11 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ticketListContainer.appendChild(ticketCard);
     });
 
-    // Add event listeners to the new buttons
     addEventListenersToButtons();
   };
 
-  // --- Add Event Listeners for Edit/Delete ---
   const addEventListenersToButtons = () => {
     document.querySelectorAll('.delete-btn').forEach(button => {
       button.addEventListener('click', () => handleDelete(button.dataset.id));
@@ -79,11 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
   
-  // --- Logic for Modals ---
   const openModal = (modal) => modal.style.display = 'flex';
   const closeModal = (modal) => modal.style.display = 'none';
 
-  // Event listeners for closing modals
   document.querySelectorAll('.modal-close-btn, .modal-cancel-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       closeModal(createModal);
@@ -91,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- CREATE Logic ---
   createBtn.addEventListener('click', () => openModal(createModal));
 
   createForm.addEventListener('submit', (event) => {
@@ -110,21 +99,19 @@ document.addEventListener('DOMContentLoaded', () => {
       title, description, status, priority: 'medium',
     };
     
-    tickets.unshift(newTicket); // Add to the start of the array
-    renderTickets(); // Re-render the list
+    tickets.unshift(newTicket);
+    renderTickets();
     closeModal(createModal);
     createForm.reset();
   });
 
-  // --- DELETE Logic ---
   const handleDelete = (ticketId) => {
     if (confirm('Are you sure you want to delete this ticket?')) {
       tickets = tickets.filter(t => t.id !== ticketId);
-      renderTickets(); // Re-render the list
+      renderTickets();
     }
   };
 
-  // --- UPDATE Logic ---
   const handleOpenEditModal = (ticketId) => {
     const ticketToEdit = tickets.find(t => t.id === ticketId);
     if (ticketToEdit) {
@@ -153,10 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
       tickets[ticketIndex] = { ...tickets[ticketIndex], title, description, status };
     }
 
-    renderTickets(); // Re-render the list
+    renderTickets();
     closeModal(editModal);
   });
 
-  // --- Initial Render ---
   renderTickets();
 });

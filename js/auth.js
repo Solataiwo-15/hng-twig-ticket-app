@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // --- LOGIN FORM LOGIC ---
   const loginForm = document.getElementById('login-form');
   if (loginForm) {
-    // ... (all the login form code from the previous step is here)
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const emailError = document.getElementById('email-error');
@@ -35,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-    // --- ADD THIS NEW SIGNUP FORM LOGIC ---
   const signupForm = document.getElementById('signup-form');
   if (signupForm) {
     const fullNameInput = document.getElementById('fullName');
@@ -83,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate successful signup and login
       const session = {
         token: 'fake-jwt-token-for-hng-task-twig-signup',
         user: { name: fullNameInput.value, email: emailInput.value },
