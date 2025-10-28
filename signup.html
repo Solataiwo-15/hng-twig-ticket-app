@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - TicketApp</title>
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/auth.css" />
+</head>
+<body>
+
+  <div class="auth-container">
+    <div class="auth-card card">
+      <a href="index.html" class="auth-logo">TicketApp</a>
+      <h1 class="auth-title">Create Your Account</h1>
+      
+      <form id="signup-form" class="auth-form" noValidate>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" class="form-input" placeholder="Ahmad Taiwo" required />
+          <div class="error-message" id="fullName-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="form-input" placeholder="you@example.com" required />
+          <div class="error-message" id="email-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-input" placeholder="Minimum 8 characters" required />
+          <div class="error-message" id="password-error"></div>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Create Account</button>
+      </form>
+
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- We use the same auth script -->
+  <script src="js/auth.js"></script>
+</body>
+</html>
